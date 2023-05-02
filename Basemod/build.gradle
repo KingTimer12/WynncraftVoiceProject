@@ -9,8 +9,6 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        //com.googlecode.soundlibs:vorbisspi:1.0.3.3
-        classpath group: 'com.googlecode.soundlibs', name: 'vorbisspi', version: '1.0.3.3', changing: true
         classpath 'gradle.plugin.com.github.johnrengelman:shadow:7.1.2'
     }
 }
@@ -122,9 +120,6 @@ dependencies {
 
     compileOnly 'javax.vecmath:vecmath:1.5.2'
     implementation "javazoom:jlayer:1.0.1"
-
-    //implementation 'com.googlecode.soundlibs:tritonus-share:0.3.7.4'
-    //implementation 'com.googlecode.soundlibs:vorbisspi:1.0.3.3'
 }
 
 shadowJar {
