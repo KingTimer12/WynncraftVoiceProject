@@ -23,9 +23,9 @@ public class SoundAtArmorStand extends MovingSound {
             return;
         }
         NPCHandler.find(rawName).ifPresent(vector -> {
-            this.xPosF = (float) vector.x;
-            this.zPosF = (float) vector.z;
-            this.yPosF = (float) vector.y;
+            this.xPosF = vector.x;
+            this.zPosF = vector.z;
+            this.yPosF = vector.y;
         });
     }
 

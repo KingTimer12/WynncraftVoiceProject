@@ -1,7 +1,7 @@
 package com.wynnvp.wynncraftvp.events;
 
 import com.wynnvp.wynncraftvp.ModCore;
-import com.wynnvp.wynncraftvp.packet.PacketIncomingFilter;
+import com.wynnvp.wynncraftvp.networking.PacketFilter;
 import com.wynnvp.wynncraftvp.utils.VersionChecker;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.Mod;
@@ -22,7 +22,7 @@ public class JoinServerEvent {
     @SubscribeEvent
     public static void onServerJoin(FMLNetworkEvent.ClientConnectedToServerEvent event) {
         //Inject filter of packets
-        event.getManager().channel().pipeline().addBefore("fml:packet_handler", ModCore.MODID + ":packet_filter", new PacketIncomingFilter());
+        event.getManager().channel().pipeline().addBefore("fml:packet_handler", ModCore.MODID + ":packet_filter", new PacketFilter());
         String serverIP = Objects.requireNonNull(Minecraft.getMinecraft().getCurrentServerData()).serverIP.toLowerCase();
         if (serverIP.startsWith("play.wynncraft")
                 || serverIP.startsWith("media.wynncraft")

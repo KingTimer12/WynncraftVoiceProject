@@ -27,6 +27,7 @@ public class AddArmorStand implements VOWPacket {
 
     @ListenPacket
     public void onPacketEntityMetadata(VOWPacketEntityMetadata packet) {
+        if (!ModCore.inServer) return;
         if (!Minecraft.getMinecraft().isCallingFromMinecraftThread()) {
             Minecraft.getMinecraft().addScheduledTask(() -> onPacketEntityMetadata(packet));
             return;

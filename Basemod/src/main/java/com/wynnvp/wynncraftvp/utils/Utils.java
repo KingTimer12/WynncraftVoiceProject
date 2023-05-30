@@ -17,6 +17,7 @@ import java.security.MessageDigest;
 public class Utils {
 
 
+
     public static void sendMessage(String text) {
         Minecraft.getMinecraft().player.sendMessage(new TextComponentString("§5[Voices of Wynn]§r " + text));
     }

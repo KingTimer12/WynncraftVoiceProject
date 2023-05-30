@@ -1,5 +1,9 @@
 package com.wynnvp.wynncraftvp.networking;
 
+import com.wynnvp.wynncraftvp.networking.packet.custom.VOWPacketEntity;
+import com.wynnvp.wynncraftvp.networking.packet.custom.VOWPacketEntityMetadata;
+import com.wynnvp.wynncraftvp.networking.packet.custom.VOWPacketEntityTeleport;
+import com.wynnvp.wynncraftvp.networking.packet.custom.VOWPacketEntityVelocity;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandler;
@@ -20,7 +24,22 @@ public class PacketIncoming<T extends Packet<?>> {
         this.ctx = ctx;
     }
 
-    public T getPacket() {
+    public Packet<?> getPacket() {
+        Packet<?> packet = null;
+        switch (this.packet.getClass().getSimpleName()) {
+            case "SPacketEntity":
+                packet = new VOWPacketEntity();
+                break;
+            case "SPacketEntityMetadata":
+                packet = new VOWPacketEntityMetadata();
+                break;
+            case "SPacketEntityTeleport":
+                packet = new VOWPacketEntityTeleport();
+                break;
+            case "SPacketEntityVelocity":
+                packet = new VOWPacketEntityVelocity();
+                break;
+        }
         return packet;
     }
 

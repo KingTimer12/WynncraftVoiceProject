@@ -10,11 +10,11 @@ import java.util.Optional;
 
 public class VOWPacketEntityTeleport extends SPacketEntityTeleport {
 
-    public Optional<EntityArmorStand> getArmor() {
-        if (Minecraft.getMinecraft().world == null) return Optional.empty();
+    public EntityArmorStand getArmor() {
+        if (Minecraft.getMinecraft().world == null) return null;
         final Entity entity = Minecraft.getMinecraft().world.getEntityByID(getEntityId());
-        if (entity instanceof EntityArmorStand) return Optional.of((EntityArmorStand) entity);
-        return Optional.empty();
+        if (entity instanceof EntityArmorStand) return (EntityArmorStand) entity;
+        return null;
     }
 
 }

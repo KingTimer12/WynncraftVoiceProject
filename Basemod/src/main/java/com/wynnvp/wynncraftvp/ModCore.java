@@ -1,7 +1,6 @@
 package com.wynnvp.wynncraftvp;
 // Do yourself a favor and organize this in order of use 
 import com.wynnvp.wynncraftvp.config.ConfigHandler;
-import com.wynnvp.wynncraftvp.events.ArmorCheckEvent;
 import com.wynnvp.wynncraftvp.events.QuitServerEvent;
 import com.wynnvp.wynncraftvp.sound.SoundPlayer;
 import com.wynnvp.wynncraftvp.sound.SoundsHandler;
@@ -48,7 +47,6 @@ public class ModCore {
 
         StringBlacklist.namesDefault();
 
-        MinecraftForge.EVENT_BUS.register(new ArmorCheckEvent());
         MinecraftForge.EVENT_BUS.register(new QuitServerEvent());
     }
 

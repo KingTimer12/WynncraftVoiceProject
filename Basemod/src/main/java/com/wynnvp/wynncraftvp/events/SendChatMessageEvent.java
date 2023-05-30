@@ -20,7 +20,7 @@ public class SendChatMessageEvent {
         }
         Minecraft.getMinecraft().getSoundHandler().stopSounds();
         ModCore.instance.soundPlayer.clearCoolDown();
-        //SoundPlayer.SPEAKING = false;
+
         NPCHandler.getNamesHandlers().clear();
         QuestMarkHandler.getWichQuest().clear();
     }
