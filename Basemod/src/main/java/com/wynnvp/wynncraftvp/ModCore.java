@@ -3,7 +3,6 @@ package com.wynnvp.wynncraftvp;
 import com.wynnvp.wynncraftvp.config.ConfigHandler;
 import com.wynnvp.wynncraftvp.events.ArmorCheckEvent;
 import com.wynnvp.wynncraftvp.events.QuitServerEvent;
-import com.wynnvp.wynncraftvp.sound.SoundController;
 import com.wynnvp.wynncraftvp.sound.SoundPlayer;
 import com.wynnvp.wynncraftvp.sound.SoundsHandler;
 import com.wynnvp.wynncraftvp.utils.StringBlacklist;
@@ -33,7 +32,6 @@ public class ModCore {
     public SoundsHandler soundsHandler;
     public static ModCore instance;
     public SoundPlayer soundPlayer;
-    public SoundController controller;
 
 
     @EventHandler
@@ -47,7 +45,6 @@ public class ModCore {
 
         soundPlayer = new SoundPlayer();
         soundsHandler = new SoundsHandler();
-        controller = new SoundController();
 
         StringBlacklist.namesDefault();
 

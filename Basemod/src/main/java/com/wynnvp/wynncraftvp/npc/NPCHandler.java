@@ -1,5 +1,6 @@
 package com.wynnvp.wynncraftvp.npc;
 
+import com.wynnvp.wynncraftvp.sound.Vector3;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.Vec3d;
 
@@ -18,6 +19,9 @@ public class NPCHandler {
         } else {
             namesHandlers.put(name, new ArrayList<>(Collections.singletonList(new Vec3d((int) vector.x, (int) vector.y, (int) vector.z))));
         }
+    }
+
+    public static void add(String name, Vector3 vector) {
     }
 
     //Get the closest armorstand
